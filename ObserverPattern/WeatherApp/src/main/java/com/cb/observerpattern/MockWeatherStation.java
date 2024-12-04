@@ -31,7 +31,7 @@ public class MockWeatherStation implements Subject{
         WeatherData data = new WeatherData();
         Random random = new Random();
         double mockTemperature = 5 + random.nextFloat() * (40-5);
-        double mockWindSpeed = 2 + random.nextFloat() * (60-2);
+        double mockWindSpeed = 2 + random.nextFloat() * (30-2);
         long mockHumidity = random.nextInt(100);
 
         data.setTemperature(mockTemperature);
