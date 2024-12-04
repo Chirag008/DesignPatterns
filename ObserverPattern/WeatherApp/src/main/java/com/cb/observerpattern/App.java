@@ -9,8 +9,8 @@ public final class App {
 
     public static void main(String[] args) throws InterruptedException {
         MockWeatherStation station = new MockWeatherStation();
-        MobileDisplay mobileDisplay = new MobileDisplay();
-        WeatherPredictor weatherPredictor = new WeatherPredictor();
+        MobileDisplay mobileDisplay = new MobileDisplay(station);
+        WeatherPredictor weatherPredictor = new WeatherPredictor(station);
         station.registerObserver(mobileDisplay);
         station.registerObserver(weatherPredictor);
         

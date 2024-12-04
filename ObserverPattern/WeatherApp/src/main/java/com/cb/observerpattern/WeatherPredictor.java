@@ -2,6 +2,12 @@ package com.cb.observerpattern;
 
 public class WeatherPredictor implements Observer{
 
+    Subject subject;
+
+    public WeatherPredictor(Subject s){
+        this.subject = s;
+    }
+
     public void predict(WeatherData weatherData){
         StringBuilder weatherPrediction = new StringBuilder();
         String temperaturePrediction = "";
@@ -17,7 +23,7 @@ public class WeatherPredictor implements Observer{
 
         if(weatherData.windSpeed <= 10){
             windPrediction = "Low wind";
-        }else if (weatherData.windSpeed<=25){
+        }else if (weatherData.windSpeed<=20){
             windPrediction = "Pleasant wind";
         }else{
             windPrediction = "Very Windy";
